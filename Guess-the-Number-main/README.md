@@ -14,7 +14,7 @@ A simple web-based number guessing game built using **HTML**, **CSS**, and **Jav
 
 ---
 
-## 🌐 Live Demo [Click here](https://nitish-ai.github.io/Guess-the-Number/)
+## 🌐 Live Demo [Click here](https://pooja123-kothawade.github.io/Guess-the-Number/)
 
 > _You can run the project by simply opening the HTML file in any modern web browser._
 
@@ -68,7 +68,7 @@ Guess the Number Screenshot
 
 **Nitish-AI**  
 *Frontend Web Developer*  
-[GitHub Profile](https://github.com/Nitish-AI)
+[GitHub Profile](https://github.com/)
 
 ---
 
