@@ -75,44 +75,46 @@
       const attempts = document.getElementById("attempts");
       let attemptsCount = 0;
 
-      submitButton.addEventListener("click", () => {
-        const userGuess = parseInt(guessInput.value);
+     submitButton.addEventListener("click", () => {
+  const userGuess = parseInt(guessInput.value);
 
-        if (isNaN(userGuess)) {
-          result.textContent = "Please enter a valid number.";
-          return;
-        }
+  if (isNaN(userGuess)) {
+    result.textContent = "Please enter a valid number.";
+    return;
+  }
 
-        attemptsCount++;
-        attempts.textContent = `Attempts: ${attemptsCount}`;
+  attemptsCount++;
+  attempts.textContent = `Attempts: ${attemptsCount}`;
 
-        if (userGuess < 1 || userGuess > 100) {
-          result.textContent = "<h1>Your guess must be between 1 and 100.</h1>";
-        } else if (userGuess < randomNumber) {
-          result.textContent = "Too low! Try again.";
-        } else if (userGuess > randomNumber) {
-          result.textContent = "Too high! Try again.";
-        } else {
-          result.textContent = `Correct! The number was ${randomNumber}. You guessed it in ${attemptsCount} attempts.`;
-          submitButton.disabled = true; 
-          guessInput.disabled = true; 
+  if (userGuess < 1 || userGuess > 100) {
+    result.textContent = "Your guess must be between 1 and 100.";
+  } else if (userGuess < randomNumber) {
+    result.textContent = "Too low! Try again.";
+  } else if (userGuess > randomNumber) {
+    result.textContent = "Too high! Try again.";
+  } else {
+    result.textContent = `Correct! The number was ${randomNumber}. You guessed it in ${attemptsCount} attempts.`;
+    submitButton.disabled = true;
+    guessInput.disabled = true;
+  }
 
-        if (attemptsCount >= 10 && userGuess !== randomNumber) {
-          result.textContent = "Game Over!";
-          submitButton.disabled = true;
-          guessInput.disabled = true;
-        }
-      });
+  if (attemptsCount >= 10 && userGuess !== randomNumber) {
+    result.textContent = `Game Over! The correct number was ${randomNumber}.`;
+    submitButton.disabled = true;
+    guessInput.disabled = true;
+  }
+});
 
-      resetButton.addEventListener("click", () => {
-        randomNumber = Math.floor(Math.random() * 100) + 1;
-        guessInput.value = "";
-        result.textContent = "";
-        attempts.textContent = "";
-        attemptsCount = 0;
-        submitButton.disabled = false;
-        guessInput.disabled = false;
-      });
+// ✅ This should be outside of submitButton's click handler
+resetButton.addEventListener("click", () => {
+  randomNumber = Math.floor(Math.random() * 100) + 1;
+  guessInput.value = "";
+  result.textContent = "";
+  attempts.textContent = "";
+  attemptsCount = 0;
+  submitButton.disabled = false;
+  guessInput.disabled = false;
+});
     </script>
   </body>
 </html>
