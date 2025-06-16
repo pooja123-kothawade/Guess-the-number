@@ -52,7 +52,8 @@ A simple web-based number guessing game built using **HTML**, **CSS**, and **Jav
 
 Guess the Number Screenshot
 |----------------------------|
-(![image]()
+(![image](![image](https://github.com/user-attachments/assets/1b853a2c-4086-4f50-b6d0-0b1d80a4da56)
+)
 ---
 
 ## 🚀 How to Run
